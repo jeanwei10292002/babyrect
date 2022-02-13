@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>拍完照存儲到本身手機</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>允許相簿存取</string>
+	<key>NSCameraUsageDescription</key>
+	<string>請允許照相機功能</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
