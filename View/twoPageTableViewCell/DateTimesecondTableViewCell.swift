@@ -1,5 +1,5 @@
 //
-//  MEMOsecondTableViewCell.swift
+//  DateTimesecondTableViewCell.swift
 //  babyrect-4
 //
 //  Created by jeanwei on 2022/2/12.
@@ -7,8 +7,11 @@
 
 import UIKit
 
-class MEMOsecondTableViewCell: UITableViewCell {
+class DateTimesecondTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var addTimeSecondTextFileld: UITextField!
+    @IBOutlet weak var AddIconSecondImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -121,7 +121,7 @@ class AddIconCollectionViewController: UICollectionViewController {
     @IBSegueAction func showSecondDetile(_ coder: NSCoder) -> AddListsecondViewController? {
         let controller = AddListsecondViewController(coder: coder)
         let cellId = self.collectionView.indexPathsForSelectedItems?.first?.row
-        controller?.IconimageName = babycategory[cellId!]  //把陣列存進avc的inforone的屬性
+        controller?.IconimageNameTwo = babycategory[cellId!]  //把陣列存進avc的inforone的屬性
         controller?.navigationItem.title = babycategory[cellId!]
 
         return controller

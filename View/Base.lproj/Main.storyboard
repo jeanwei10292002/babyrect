@@ -106,9 +106,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-K9-148">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="419"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="zhd-K9-148">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="416"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="datetimeSecondCell" id="l6d-WO-9Te" customClass="DateTimesecondTableViewCell" customModule="babyrect_4" customModuleProvider="target">
@@ -141,6 +140,10 @@
                                                 <constraint firstItem="LWP-y3-NY6" firstAttribute="top" secondItem="MCV-cy-mXW" secondAttribute="top" constant="10" id="oSP-JW-rcO"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="AddIconSecondImageView" destination="LWP-y3-NY6" id="ctV-NX-GAL"/>
+                                            <outlet property="addTimeSecondTextFileld" destination="XaS-Ih-ngV" id="cu6-wz-ntM"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MEMOSecondCell" id="23E-5f-QyX" customClass="MEMOsecondTableViewCell" customModule="babyrect_4" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="144.5" width="414" height="100"/>
@@ -152,10 +155,12 @@
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eiA-Qo-OG9">
                                                     <rect key="frame" x="20" y="20" width="374" height="60"/>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" systemColor="labelColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="F7p-7f-Liw" id="r0A-qr-9KW"/>
+                                                    </connections>
                                                 </textView>
                                             </subviews>
                                             <constraints>
@@ -165,6 +170,9 @@
                                                 <constraint firstAttribute="bottom" secondItem="eiA-Qo-OG9" secondAttribute="bottom" constant="20" id="wCg-bY-TXK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="memoSecondTextView" destination="eiA-Qo-OG9" id="Ecv-fN-K6H"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -172,25 +180,91 @@
                                     <outlet property="delegate" destination="F7p-7f-Liw" id="RjF-fG-jsZ"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLU-6I-pQ0">
-                                <rect key="frame" x="163" y="448" width="88" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLU-6I-pQ0">
+                                <rect key="frame" x="70" y="436" width="88" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="E0c-ce-0oZ"/>
+                                    <constraint firstAttribute="width" constant="88" id="FmN-KV-4Dy"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="photo-camera"/>
+                                <connections>
+                                    <action selector="photoHandler:" destination="F7p-7f-Liw" eventType="touchUpInside" id="eHV-Ze-uCS"/>
+                                </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VvN-My-gXA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VvN-My-gXA">
                                 <rect key="frame" x="0.0" y="534" width="414" height="194"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="194" id="gb3-N3-JjA"/>
+                                    <constraint firstAttribute="width" constant="414" id="z4D-y7-txZ"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob7-6p-fDr">
+                                <rect key="frame" x="198" y="436" width="122" height="78"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="122" id="Ccs-wJ-xeK"/>
+                                    <constraint firstAttribute="height" constant="78" id="G1z-ks-fSo"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="photo-gallery"/>
+                                <connections>
+                                    <action selector="photoHandler:" destination="F7p-7f-Liw" eventType="touchUpInside" id="qhI-lD-e3u"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dvl-ya-gNP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ob7-6p-fDr" firstAttribute="leading" secondItem="LLU-6I-pQ0" secondAttribute="trailing" constant="40" id="63e-NJ-dgQ"/>
+                            <constraint firstItem="VvN-My-gXA" firstAttribute="top" secondItem="LLU-6I-pQ0" secondAttribute="bottom" constant="20" id="7bv-oF-47J"/>
+                            <constraint firstItem="VvN-My-gXA" firstAttribute="leading" secondItem="dvl-ya-gNP" secondAttribute="leading" id="Gz1-fe-Xrk"/>
+                            <constraint firstItem="zhd-K9-148" firstAttribute="top" secondItem="nMx-BE-bN9" secondAttribute="topMargin" constant="-88" id="RH6-7C-IZ2"/>
+                            <constraint firstItem="zhd-K9-148" firstAttribute="leading" secondItem="VvN-My-gXA" secondAttribute="leading" id="VOD-1K-8e9"/>
+                            <constraint firstItem="LLU-6I-pQ0" firstAttribute="top" secondItem="zhd-K9-148" secondAttribute="bottom" constant="20" id="VlQ-HM-oa1"/>
+                            <constraint firstItem="VvN-My-gXA" firstAttribute="top" secondItem="Ob7-6p-fDr" secondAttribute="bottom" constant="20" id="ady-hw-99u"/>
+                            <constraint firstItem="Ob7-6p-fDr" firstAttribute="top" secondItem="zhd-K9-148" secondAttribute="bottom" constant="20" id="l0g-4e-7p6"/>
+                            <constraint firstItem="dvl-ya-gNP" firstAttribute="bottom" secondItem="VvN-My-gXA" secondAttribute="bottom" constant="134" id="lgK-RG-pqM"/>
+                            <constraint firstItem="LLU-6I-pQ0" firstAttribute="leading" secondItem="dvl-ya-gNP" secondAttribute="leading" constant="70" id="mIS-m3-7Vj"/>
+                            <constraint firstItem="VvN-My-gXA" firstAttribute="trailing" secondItem="dvl-ya-gNP" secondAttribute="trailing" id="sAx-2j-XQi"/>
+                            <constraint firstItem="zhd-K9-148" firstAttribute="trailing" secondItem="VvN-My-gXA" secondAttribute="trailing" id="wGB-6w-hNW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ub3-EG-N6k"/>
+                    <connections>
+                        <outlet property="photoImageView" destination="VvN-My-gXA" id="o6a-aq-q7R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Wb-x1-D65" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2438" y="814"/>
+            <point key="canvasLocation" x="2460.8695652173915" y="811.60714285714278"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="bG8-ED-va0">
+            <objects>
+                <tableViewController id="U7J-Ud-NI8" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="IkA-Fo-Lxx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="XFu-f7-Xuv">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="XFu-f7-Xuv" id="0hp-Fi-VFb">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="U7J-Ud-NI8" id="K7f-2n-8xg"/>
+                            <outlet property="delegate" destination="U7J-Ud-NI8" id="QM9-mF-yer"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gjm-Ei-g5x" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2444" y="-584"/>
         </scene>
         <!--Add List Table View Controller-->
         <scene sceneID="Y2u-CZ-q9O">
@@ -344,7 +418,18 @@
                             <outlet property="delegate" destination="XfR-BO-02h" id="xGQ-wb-eO3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="HcX-k5-gkG"/>
+                    <navigationItem key="navigationItem" id="HcX-k5-gkG">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="4Z9-fK-jxi">
+                            <connections>
+                                <action selector="backToPrevious:" destination="XfR-BO-02h" id="QuU-Rc-npg"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0wM-pQ-UEZ">
+                            <connections>
+                                <action selector="saveRecode:" destination="XfR-BO-02h" id="hxW-GF-Ehb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FxU-OZ-pZY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -372,6 +457,7 @@
     <resources>
         <image name="matoommi" width="450" height="450"/>
         <image name="photo-camera" width="64" height="64"/>
+        <image name="photo-gallery" width="64" height="64"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

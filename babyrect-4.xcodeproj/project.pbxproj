@@ -96,6 +96,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		64093A2527B907B000F1CD2B /* onePageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6480D02F27B7E34000A56459 /* PhotoCellTableViewCell.swift */,
+				6480D02927B7559200A56459 /* MEMOCellTableViewCell.swift */,
+				6480D02727B7557300A56459 /* DataCellTableViewCell.swift */,
+				6480D02527B6AA2300A56459 /* DateTimeTableViewCell.swift */,
+			);
+			path = onePageTableViewCell;
+			sourceTree = "<group>";
+		};
+		64093A2627B907E100F1CD2B /* twoPageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				6480D03527B7FF2500A56459 /* MEMOsecondTableViewCell.swift */,
+				6480D03327B7FF0D00A56459 /* DateTimesecondTableViewCell.swift */,
+			);
+			path = twoPageTableViewCell;
+			sourceTree = "<group>";
+		};
 		6480CFDD27B6720500A56459 = {
 			isa = PBXGroup;
 			children = (
@@ -150,12 +170,9 @@
 		6480D01B27B677A200A56459 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64093A2527B907B000F1CD2B /* onePageTableViewCell */,
+				64093A2627B907E100F1CD2B /* twoPageTableViewCell */,
 				6480CFEF27B6720500A56459 /* Main.storyboard */,
-				6480D03527B7FF2500A56459 /* MEMOsecondTableViewCell.swift */,
-				6480D03327B7FF0D00A56459 /* DateTimesecondTableViewCell.swift */,
-				6480D02927B7559200A56459 /* MEMOCellTableViewCell.swift */,
-				6480D02727B7557300A56459 /* DataCellTableViewCell.swift */,
-				6480D02527B6AA2300A56459 /* DateTimeTableViewCell.swift */,
 				6480D02127B67BF100A56459 /* AddlistCollectionViewCell.swift */,
 				6480CFF427B6720700A56459 /* LaunchScreen.storyboard */,
 			);
@@ -168,7 +185,6 @@
 				6480CFED27B6720500A56459 /* ViewController.swift */,
 				6480D01D27B678D400A56459 /* AddIconCollectionViewController.swift */,
 				6480D02327B6A9A900A56459 /* AddListTableViewController.swift */,
-				6480D02F27B7E34000A56459 /* PhotoCellTableViewCell.swift */,
 				6480D03127B7FC2100A56459 /* AddListsecondViewController.swift */,
 			);
 			path = Controller;

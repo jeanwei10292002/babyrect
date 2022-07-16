@@ -17,6 +17,13 @@ class AddListTableViewController: UITableViewController {
     var ItemSection = ["Date & Time","Data","MEMO","Photo"]
     
     
+    @IBAction func saveRecode(_ sender: UIBarButtonItem) {
+        print("資料儲存....")
+    }
+    @IBAction func backToPrevious(_ sender: UIBarButtonItem) {
+        print("Cancel clicked!")
+        self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -131,7 +138,7 @@ class AddListTableViewController: UITableViewController {
     
 }
 
-
+//textView鍵盤案return收起 輸入數字限定不超過三十字
 extension AddListTableViewController:UITextViewDelegate{
     func textView(_ textView: UITextView , shouldChangeTextIn range:NSRange,replacementText text:String) ->Bool {
         if text == "\n"{
